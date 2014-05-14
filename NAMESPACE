@@ -1,0 +1,4 @@
+import(Hmisc, mvtnorm, MCMCpack, graphics)
+export(equivonly, binding, nonbinding, nfix, nminmax, oc, figureE, figureEF)
+
+
