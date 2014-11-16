@@ -11,7 +11,7 @@ calculates sample size for group sequential designs in equivalence studies that 
 \usage{
 nminmax(l, u, theta, sigma, n1.lower, n2.lower, t.vec, type1, type2, 
 gamma = rep(-4, 2), binding = FALSE, n1.upper = ceiling(2 * n1.lower), 
-n2.upper = ceiling(2 * n2.lower), n.sim = 10000)
+n2.upper = ceiling(2 * n2.lower), n.sim = 10000, seed = NULL)
 }
 
 \arguments{
@@ -43,6 +43,8 @@ n2.upper = ceiling(2 * n2.lower), n.sim = 10000)
 }
   \item{n.sim}{number of randomly simulated samples in computation of n.minmax via the Monte Carlo simulation approach. Default n.sim=1e4
 }
+  \item{seed}{seed used in the Monte Carlo computation. If non-specified, the seed is set randomly.
+}
 }
 
 \value{
@@ -58,7 +60,9 @@ n2.upper = ceiling(2 * n2.lower), n.sim = 10000)
     
  
 \references{
-Liu, F. and Li, Q. (2014), Sequential Equivalence Testing based on the Exact Distribution of Bivariate Noncentral $t$-statistics, Computational Statistics and Data Analysis  (doi: 10.1016/j.csda.2014.02.007)
+Liu, F. and Li, Q. (2014), Sequential Equivalence Testing based on the Exact Distribution of Bivariate Noncentral $t$-statistics, Computational Statistics and Data Analysis, 77:14-24
+
+Liu, F. (2014), gset:  an R package for exact sequential test of equivalence hypothesis based on bivariate non-central $t$-statistics, the R Journal (to appear)
 }
 
 \author{

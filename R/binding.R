@@ -1,7 +1,7 @@
 binding <-
 function(l, u, theta, sigma, n1, n2, t.vec, type1, type2, gamma = rep(-4,2),
                    crange=c(-10,10),  drange=c(-10,10), force=TRUE, 
-                   plot=TRUE, ll=3, ul=6, n.sim=1e4) 
+                   plot=TRUE, ll=3, ul=6, n.sim=1e4, seed=NULL) 
 {
   HSD <- function(t,error,gamma) error*(1-exp(-gamma*t))/(1-exp(-gamma))
   I.vec <- HSD(t.vec,type1, gamma[1])
@@ -11,6 +11,7 @@ function(l, u, theta, sigma, n1, n2, t.vec, type1, type2, gamma = rep(-4,2),
   nn1 <- ceiling(n1 * t.vec); nn1[K] <- n1
   nn2 <- ceiling(n2 * t.vec); nn2[K] <- n2
 
+  if(!is.null(seed)) set.seed(seed)
   
   simdataL <- data.frame(matrix(0,n.sim*K,3))
   colnames(simdataL)<- c("stage", "t.L", "t.U")
@@ -33,7 +34,6 @@ function(l, u, theta, sigma, n1, n2, t.vec, type1, type2, gamma = rep(-4,2),
     t.U <-  (diff - u) / se.pool  
     simdataL[(k-1)*n.sim + 1:n.sim,] <- cbind(k, t.L, t.U)    
   }
-  
   
   simdata0 <- data.frame(matrix(0,n.sim*K,3))
   colnames(simdata0)<- c("stage", "t.L", "t.U")

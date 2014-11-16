@@ -14,8 +14,8 @@ gset computes the critical values in the sequential testing of  an equivalence h
 \tabular{ll}{
 Package: \tab gset\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-05-14\cr
+Version: \tab 1.1.0\cr
+Date: \tab 2014-11-16\cr
 License: \tab GLP (>=2) \cr
 }
 The package contains 8 functions: 4 functions can be used to compute the equivalence and futilities boundaries (equivonly, nonbinding, binding, nminmax); 1 function to compute the sample size of an equivalence study in the traditional nonsequential setting (nfix); 1 function to compute the sample size of an equivalence study in the sequential setting (nminmax); 2 functions for generating the boundary plots (figureE, figureEF); and 1 function to examine the the operating characteristics of a given sequential design.
@@ -26,7 +26,9 @@ Fang Liu (fang.liu.131@nd.edu)
 }
 
 \references{
-Liu, F. and Li, Q. (2014), Sequential Equivalence Testing based on the Exact Distribution of Bivariate Noncentral $t$-statistics, Computational Statistics and Data Analysis  (doi: 10.1016/j.csda.2014.02.007)
+Liu, F. and Li, Q. (2014), Sequential Equivalence Testing based on the Exact Distribution of Bivariate Noncentral $t$-statistics, Computational Statistics and Data Analysis, 77:14-24
+
+Liu, F. (2014), gset:  an R package for exact sequential test of equivalence hypothesis based on bivariate non-central $t$-statistics, the R Journal (to appear)
 }
 
 \keyword{ package }
